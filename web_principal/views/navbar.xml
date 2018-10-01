@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<!-- Banner -->
+		<template id="import_css_to_navbar" name="Import custom css" inherit_id="website.assets_frontend">
+			<xpath expr="." position="inside">
+				<link href="/web_principal/static/src/css/estilos.css" rel="stylesheet" type="text/css"/>
+			</xpath>
+		</template>
+		<template id="website.layout_logo_show" inherit_id="website.layout" customize_show="True" name="Show Logo">
+			<xpath expr="//header//a[@class='navbar-brand']" position="replace">
+				<a href="/" class="navbar-brand logo">
+					<img src="/logo.png" style="max-height: 100px;" t-att-alt="'Logo of %s' % res_company.name" t-att-title="res_company.name"/>
+				</a>
+			</xpath>
+			<xpath expr="//header//div[@class='navbar navbar-default navbar-static-top']" position="attributes">
+				<attribute name="class">navbar navbar-default navbar-static-top navbar-tln</attribute>
+			</xpath>
+			<xpath expr="//header//div[@class='navbar-header']" position="attributes">
+				<attribute name="class">navbar-header navbar-tln</attribute>
+			</xpath>
+		</template>
+	</data>
+</odoo>

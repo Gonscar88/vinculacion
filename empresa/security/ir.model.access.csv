@@ -1,0 +1,6 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_tln_giro_empresarial_company,tln giro_empresarial,empresa.model_tln_giro_empresarial,empresa.tln_empresa_group,1,1,0,0
+access_tln_giro_empresarial_all,tln giro_empresarial,empresa.model_tln_giro_empresarial,,1,0,0,0
+access_tln_habilidad_empresa,tln habilidad empresa,estudiante.model_tln_habilidad,empresa.tln_empresa_group,1,1,1,0
+access_tln_res_comapny_inherit,tln res company inherit,base.model_res_company,empresa.tln_empresa_group,1,1,0,0
+access_tln_res_comapny_inherit_all,tln res company,base.model_res_company,,1,0,0,0

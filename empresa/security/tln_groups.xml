@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record id="tln_empresa_group" model="res.groups">
+			 <field name="name">Empresa</field>
+		</record>
+        
+		<record model="ir.rule" id="tln_estudiante_to_empresa_rule">
+            <field name="name">Estudiante to empresa rule</field>
+            <field name="model_id" ref="model_res_company"/>
+            <field name="groups" eval="[(4, ref('estudiante.tln_estudiante_group'))]"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_create" eval="0"/>
+            <field name="perm_unlink" eval="0"/>
+        </record>
+        
+	</data>
+</odoo>

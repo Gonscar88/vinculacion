@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+        <menuitem id="main_tln_empresa_menu" name="Empresas" web_icon="empresa,static/description/icon.png"/>
+        <!--<menuitem id="empresa_menu" action="tln_empresa_action" name="Empresas" parent="main_tln_empresa_menu" groups="tln_empresa_group"/>
+
+        Add menuitem to estudents-->
+        <menuitem id="estudiante_empresa_menu" name="Talentos" action="estudiante.estudiante_action" parent="estudiante.main_tln_menu" groups="tln_empresa_group"/>
+        
+        <!--Add menuitem res_company-->
+        <menuitem id="res_company_menu" action="tln_res_company_inherit_action" name="Empresa" parent="main_tln_empresa_menu" groups="tln_empresa_group,estudiante.tln_estudiante_group"/>
+
+    </data>
+</odoo>

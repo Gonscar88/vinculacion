@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+		<template inherit_id="web_principal.homepage_inherit" id="set_buttons_homepage">
+			<xpath expr="//div[@id='espacio_registro']" position="inside">
+				<a type="button" class="btn btn-warning btn-lg" href="/page/registro_empresa.tln_registro_empresa">Empresa</a>
+			</xpath>
+		</template>
+	</data>
+</odoo>

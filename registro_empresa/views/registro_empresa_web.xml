@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="tln_registro_empresa" name="Registro empresa">
+		<t t-call="website.layout">
+			<title>Registro Empresas</title>
+			<meta charset="UTF-8"/>
+			<div id="wrap" class="">
+				<div>
+					<div class="header">
+						<div class="jumbotron">
+							<div class="info">
+						        <h1>Registro Empresa</h1>
+						    </div>
+						</div>
+					</div>
+					<div class="col-md-offset-2 col-md-8">
+						<form action="/website/create_empresa/" id="formExpense" method="post" class="s_website_form form-horizontal container mt32" enctype="multipart/form-data">
+							<input type="hidden" id="csrf_token" name="csrf_token" t-att-value="request.csrf_token()"/>
+							<div class="form-group form-field o_website_form_required_custom">
+								<label class="col-md-3 col-sm-4 control-label" for="name">Nombre de la empresa</label>
+								<div class="col-md-7 col-sm-8">
+									<input type="text" class="form-control o_website_form_input" name="name" required="1"/>
+								</div>
+							</div>
+							<div class="form-group form-field o_website_form_required_custom">
+								<label class="col-md-3 col-sm-4 control-label" for="contacto">Nombre de contacto</label>
+								<div class="col-md-7 col-sm-8">
+									<input type="text" class="form-control o_website_form_input" name="contacto" required="1"/>
+								</div>
+							</div>
+							<div class="form-group form-field o_website_form_required_custom">
+								<label class="col-md-3 col-sm-4 control-label" for="telefono">Teléfono de contacto</label>
+								<div class="col-md-7 col-sm-8">
+									<input type="text" class="form-control o_website_form_input" name="telefono" required="1"/>
+								</div>
+							</div>
+							<div class="form-group form-field o_website_form_required_custom field-login" >
+								<label class="col-md-3 col-sm-4 control-label" for="email">Email del contacto</label>
+								<div class="col-md-7 col-sm-8">
+									<input type="text" class="form-control o_website_form_input" name="email"  required="1"/>
+									<br/>
+									<p class="alert alert-danger" t-if="error">
+										<t t-esc="error"/>
+									</p>
+								</div>
+							</div>
+							
+							
+							<!-- Only show the send button if all the required fields are filled -->
+							<div class="form-group" id="send_expense">
+								<div class="col-md-offset-3 col-sm-offset-4 col-sm-8 col-md-7 text-right">
+									<button type="submit" id="btnSendExpense" class="btn btn-lg btn-primary">Enviar datos</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</t>
+	</template>
+	<template id="registro_empresa_success" name="empresa registrado">
+		<t t-call="website.layout">
+			<title>Registro Completo</title>
+			<meta charset="UTF-8"/>
+			<div class="container">
+				<br/>
+				<br/>
+				<div class="alert alert-success text-center">
+					<span class="fa fa-check-circle-o" style="font-size:50px;"></span>
+					<hr/>
+					<h3>Tu información ha sido enviada, recibirás un correo para confirmar tu registro</h3>
+				</div>
+			</div>
+		</t>
+	</template>
+</odoo>
